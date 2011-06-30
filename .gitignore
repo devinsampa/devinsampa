@@ -1,10 +1,8 @@
 log
 tmp
-config/database.yml
+config/*.yml
 .DS_Store
 public/images/speakers
-config/mailer.yml
-config/pagseguro.yml
 REVISION
 public/divulgar.html
 public/googlehostedservice.html
@@ -17,3 +15,5 @@ db/dump/
 db/devinsampa_test.db
 .rvmrc
 *.patch
+.bundle
+
