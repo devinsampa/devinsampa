@@ -1,0 +1,46 @@
+# encoding: UTF-8
+pt:
+  # Active Record
+  activerecord:
+    models:
+      attendee: "Inscrição"
+    attributes:
+      attendee:
+        doc: "Documento de identificação"
+      _all:
+        name: "Nome"
+        email: "E-mail"
+        created_date: "Data de criação"
+        updated_at: "Data de atualização"
+        title: "Título"
+        author: "Autor"
+        publish_date: "Publicação"
+
+  # Controllers and views
+  controllers:
+    new_post: "Novo artigo ténico"
+    new_user: "Novo usuário"
+    new_page: "Nova página"
+    new_calendar: "Novo evento"
+    new_product: "Novo produto"
+    question:
+      remove_post: 'Deseja remover o artigo técnico?'
+      remove_calendar: 'Deseja remover o evento?'
+      remove_page: 'Deseja remover a página?'
+      remove_product: 'Deseja remover o produto?'
+    flash:
+      product_create_sucess: "Produto adicionado com sucesso!"
+      product_update_sucess: "Alteração no produto efetuadas com sucesso!"
+      product_delete_sucess: "Produto removido com sucesso!"
+      post_create_sucess: "Artigo técnico adicionado com sucesso!"
+      post_update_sucess: "Alteração no artigo efetuadas com sucesso!"
+      post_delete_sucess: "Artigo removido com sucesso!"
+      page_create_sucess: "Pagina adicionada com sucesso!"
+      page_update_sucess: "Alteração na página efetuadas com sucesso!"
+      page_delete_sucess: "Página removida com sucesso!"
+      user_create_sucess: "Usuário adicionado com sucesso!"
+      user_update_sucess: "Alteração no usuário efetuadas com sucesso!"
+      user_delete_sucess: "Usuário removido com sucesso!"
+      calendar_create_sucess: "Evento adicionado com sucesso!"
+      calendar_update_sucess: "Alteração no evento efetuadas com sucesso!"
+      calendar_delete_sucess: "Evento removido com sucesso!"
