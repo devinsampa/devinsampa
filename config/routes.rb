@@ -1,48 +1,58 @@
-ActionController::Routing::Routes.draw do |map|
-  map.namespace :admin do |admin|
-    admin.resources :speakers,
-      :collection => { :report => :get }
-    admin.resources :agendas
-    admin.resources :presentations
-    admin.settings "settings/edit", :controller => "system_configurations", :action => "edit"
-    admin.update_settings "settings/update", :controller => "system_configurations", :action => "update", :conditions => {:method => :put}
-    admin.resources :attendees,
-      :member => { :resend => :get,
-                   :completed => :put,
-                   :pending => :put,
-                   :approved => :put,
-                   :verifying => :put,
-                   :canceled => :put,
-                   :refunded => :put,
-                   :warning => :get
-                    },
-      :collection => { :report => :get }
+Devinsampa::Application.routes.draw do
+  get "/palestrantes" => redirect("/palestras")
+  get "/divulgar" => redirect("/")
+  get "/feedback" => redirect("/contato")
+
+  namespace :admin do
+    resources :speakers, :collection => { :report => :get }
+    resources :agendas
+    resources :presentations
+    
+    controller :system_configurations do
+    	get "settings/edit" => :edit, :as => "settings"
+    	put "settings/update" => :update, :as => "update_settings"
+    end
+    
+    resources :attendees do
+      member do 
+      	get :resend
+        put :completed
+        put :pending
+        put :approved
+        put :verifying
+        put :canceled
+        put :refunded
+        get :warning
+      end
+
+      get :report, :on => :collection
+    end
+    
+    resources :user_sessions
+  end
+  
+  controller :attendees do
+  	post "/inscricao/nova" => :create
+  	get "/inscricao" => :new
+  	get "/inscricao/pagseguro/confirmacao" => :pagseguro, :as => "pagseguro_confirmation"
+  	get "/inscricao/pagamento/:token" => :payment, :as => "payment"
   end
 
-  map.resources :user_sessions, :as => "admin/acesso"
+  controller :user_sessions do
+  	get "/login" => :new, :as => "login"
+  	get "/logout" => :destroy, :as => "logout"
+  end
+  
+  root :to => "pages#index"
 
-  map.resources :attendees, :as => "inscricao", :only => [:create]
-  map.register '/inscricao', :controller => "attendees", :action => "new"
-  map.payment  '/inscricao/pagamento/:token', :controller => "attendees", :action => "payment"
-  map.pagseguro_confirmation "/inscricao/pagseguro/confirmacao", :controller => "attendees", :action => "pagseguro"
-
-  map.with_options :controller => 'user_sessions' do |user_sessions|
-    user_sessions.login         "/login",        :action => "new"
-    user_sessions.logout        "/logout",       :action => "destroy"
+  controller :pages do
+    get "/contato" => :contact, :as => "contact"
+    get "/2009" => :photos_and_videos_2009, :as => "photos_and_videos_2009"
+    get "/palestras" => :presentations, :as => "presentations"
+    get "/programacao" => :agenda, :as => "agenda" 
   end
 
-  map.with_options :controller => 'pages' do |pages|
-    pages.home                   "/",                :action => "index"
-    pages.contact                "/contato",         :action => "contact"
-    pages.photos_and_videos_2009 "/2009",            :action => "photos_and_videos_2009"
-    pages.presentations          "/palestras",       :action => "presentations"
-    pages.agenda                 "/programacao",     :action => "agenda"
-    pages.speakers               "/palestrantes",    :action => "redirecting", :to => "/palestras"
-    pages.speakers               "/divulgar",        :action => "redirecting", :to => "/"
-    pages.feedback               "/feedback",        :action => "redirecting", :to => "/contato"
-  end
+  get "/admin" => "Admin::Admin#index", :as => "admin"
 
-  map.admin "/admin", :controller => "Admin::Admin", :action => "index"
-
-  map.not_found "*minvalid_route", :controller => 'pages', :action => 'not_found'
+  match "*minvalid_route" => "pages#not_found"
 end

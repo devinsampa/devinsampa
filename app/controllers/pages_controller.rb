@@ -36,10 +36,6 @@ class PagesController < ApplicationController
     render :status => :not_found, :layout => true
   end
 
-  def redirecting
-    redirect_to params[:to] || "/"
-  end
-
   private
     def contact_valid?(contact)
       contact.errors = []
