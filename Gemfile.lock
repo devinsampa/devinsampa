@@ -42,6 +42,10 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     exception_notification (2.4.1)
+    guard (0.4.2)
+      thor (~> 0.14.6)
+    guard-rspec (0.4.0)
+      guard (>= 0.4.0)
     highline (1.6.2)
     i18n (0.5.0)
     linecache19 (0.5.12)
@@ -118,6 +122,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   exception_notification
+  guard-rspec
   mysql (= 2.8.1)
   pagseguro
   rails (= 3.0.9)
