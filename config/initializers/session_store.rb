@@ -1,3 +1,4 @@
+#encoding: UTF-8
 # Be sure to restart your server when you modify this file.
 
 Devinsampa::Application.config.session_store :cookie_store, :key => '_devinsampa_session'

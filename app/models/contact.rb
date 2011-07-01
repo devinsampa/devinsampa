@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class Contact < ActionMailer::Base
   
   def from_site(contact, receive_a_copy = false)

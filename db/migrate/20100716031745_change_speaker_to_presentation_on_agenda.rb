@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class ChangeSpeakerToPresentationOnAgenda < ActiveRecord::Migration
   def self.up
     rename_column :agendas, :speaker_id, :presentation_id

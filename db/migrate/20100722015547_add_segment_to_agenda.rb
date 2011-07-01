@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class AddSegmentToAgenda < ActiveRecord::Migration
   def self.up
     add_column :agendas, :segment, :string

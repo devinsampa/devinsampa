@@ -1,3 +1,4 @@
+#encoding: UTF-8
 module Admin::AttendeesHelper
   def current_admin_attendee_order(label, order = label.downcase)
     if order === session[:admin_attendee_order]

@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class AddEmailToSpeakers < ActiveRecord::Migration
   def self.up
     add_column :speakers, :email, :string

@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class AddAttachmentsAvatarToSpeaker < ActiveRecord::Migration
   def self.up
     add_column :speakers, :avatar_file_name, :string

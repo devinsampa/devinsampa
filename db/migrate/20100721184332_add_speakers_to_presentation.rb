@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class AddSpeakersToPresentation < ActiveRecord::Migration
   def self.up
     add_column :presentations, :principal_speaker_id, :integer

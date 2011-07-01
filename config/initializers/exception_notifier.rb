@@ -1,3 +1,4 @@
+#encoding: UTF-8
 sender_address = %("Exception Notification" <devinsampa@gmail.com>)
 
 exception_recipients = %w(

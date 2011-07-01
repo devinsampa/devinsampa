@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class AddTwitterToSpeakers < ActiveRecord::Migration
   def self.up
     add_column :speakers, :twitter, :string

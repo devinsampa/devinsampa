@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class CreateAgendas < ActiveRecord::Migration
   def self.up
     create_table :agendas do |t|

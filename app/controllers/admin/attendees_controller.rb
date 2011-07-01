@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class Admin::AttendeesController < Admin::AdminController
   before_filter :set_attendee, :except => [:index, :report, :new, :create]
   

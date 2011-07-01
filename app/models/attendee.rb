@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class Attendee < ActiveRecord::Base
   attr_accessor :free
 

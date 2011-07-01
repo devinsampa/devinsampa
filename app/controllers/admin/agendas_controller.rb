@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class Admin::AgendasController < Admin::AdminController
   before_filter :set_presentation, :only => [:new, :edit]
   before_filter :set_agenda, :only => [:edit, :update]

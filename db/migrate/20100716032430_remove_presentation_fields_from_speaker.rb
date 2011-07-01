@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class RemovePresentationFieldsFromSpeaker < ActiveRecord::Migration
   def self.up
     remove_column :speakers, :presentation

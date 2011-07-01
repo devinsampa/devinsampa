@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class AttendeesController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :pagseguro
 

@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class LoadAgenda < ActiveRecord::Migration
   def self.up
     agenda = [

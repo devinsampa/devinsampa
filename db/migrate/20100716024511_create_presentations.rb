@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class CreatePresentations < ActiveRecord::Migration
   def self.up
     create_table :presentations do |t|

@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class CreateSystemConfigurations < ActiveRecord::Migration
   def self.up
     create_table :system_configurations, :force => true do |t|

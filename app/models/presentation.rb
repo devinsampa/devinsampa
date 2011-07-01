@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class Presentation < ActiveRecord::Base
   default_scope :order => 'title'
 

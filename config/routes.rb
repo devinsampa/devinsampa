@@ -1,3 +1,4 @@
+#encoding: UTF-8
 Devinsampa::Application.routes.draw do
   get "/palestrantes" => redirect("/palestras")
   get "/divulgar" => redirect("/")

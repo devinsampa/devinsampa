@@ -1,3 +1,4 @@
+#encoding: UTF-8
 def random_string
   letters = *'a'..'z'
   random_string_for_uniqueness = ''
